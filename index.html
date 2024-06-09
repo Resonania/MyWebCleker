@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="click-count">Clicks: 0</div>
+        <div id="click-circle" class="circle">Click me</div>
+        <div id="shop">Shop</div>
+    </div>
+    <div id="shop-menu" class="hidden">
+        <div class="shop-item" onclick="buyItem('clicker', 50)">Кликер: 50 монет</div>
+        <div class="shop-item" onclick="buyItem('superClicker', 500)">Супер Кликер: 500 монет</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
