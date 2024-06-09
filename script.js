@@ -1,39 +1,21 @@
-let clickCount = 0;
-let coins = 0;
-let clickers = 0;
-let superClickers = 0;
+const clickArea = document.getElementById('clickArea');
+const ball = document.getElementById('ball');
+const clickCounter = document.getElementById('clickCounter');
 
-document.getElementById('click-circle').addEventListener('click', function() {
-    click();
+let clicks = 0;
+
+clickArea.addEventListener('click', () => {
+    clicks++;
+    clickCounter.textContent = clicks;
+    animateClick();
 });
 
-document.getElementById('shop').addEventListener('click', function() {
-    document.getElementById('shop-menu').classList.toggle('hidden');
-});
-
-function click() {
-    clickCount++;
-    coins++;
-    updateDisplay();
-
-    // Анимация уменьшения и увеличения круга
-    document.getElementById('click-circle').style.transform = 'scale(0.9)';
+function animateClick() {
+    ball.style.transform = 'scale(0.9)';
     setTimeout(() => {
-        document.getElementById('click-circle').style.transform = 'scale(1)';
-    }, 100);
-
-    // Показ текста +1
-    const plusOne = document.createElement('div');
-    plusOne.innerText = '+1';
-    plusOne.style.position = 'absolute';
-    plusOne.style.top = '50%';
-    plusOne.style.left = '50%';
-    plusOne.style.transform = 'translate(-50%, -50%)';
-    plusOne.style.color = 'red';
-    plusOne.style.fontSize = '20px';
-    plusOne.style.animation = 'fadeOut 1s forwards';
-    document.body.appendChild(plusOne);
-    setTimeout(() => {
+        ball.style.transform = 'scale(1)';
+    }, 200);
+}
         document.body.removeChild(plusOne);
     }, 1000);
 
